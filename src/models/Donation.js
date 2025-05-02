@@ -17,7 +17,7 @@ const donationSchema = new mongoose.Schema({
   email: { type: String, default: null },
   name: { type: String, default: null },
   phone: { type: String, default: null },
-  status: { type: String, enum: ["Pending", "Completed"], default: "Completed" },
+  status: { type: String, enum: ["Pending","Failed", "Completed"], default: "Completed" },
   razorpayPaymentId: { type: String, default: null },
   razorpaySignature: { type: String, default: null },
   razorpayOrderId: { type: String, default: null },
