@@ -63,14 +63,7 @@ export async function POST(req) {
       await donation.save();
       console.log("Recurring donation recorded:", { paymentId, subscriptionId, amount });
 
-      const updatedSubscription = await Subscription.findByIdAndUpdate(
-        subscription._id,
-        {
-          createdAt: new Date(),
-          lastPaymentAt: new Date(),
-        },
-        { new: true }
-      );
+      
       console.log("Subscription updated:", { subscriptionId });
 
       const fromNumber = `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`;
