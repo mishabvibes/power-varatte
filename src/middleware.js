@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 // Middleware function to check API key
 export async function middleware(req) {
   // Skip middleware for non-API routes or auth routes if needed
-  if (!req.nextUrl.pathname.startsWith('/api') || req.nextUrl.pathname.startsWith('/api/auth')) {
+  if (!req.nextUrl.pathname.startsWith('/api') || req.nextUrl.pathname.startsWith('/api/auth') || req.nextUrl.pathname.startsWith('/api/webhook')) {
     return NextResponse.next();
   }
 
